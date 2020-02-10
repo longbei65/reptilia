@@ -1,0 +1,16 @@
+syntax = "proto3";
+package register;
+
+service Registration {
+    rpc register (RegisterRequest) returns (RegisterReply){}
+}
+
+message RegisterRequest {
+    string secret = 1;
+}
+
+message RegisterReply {
+    bool success = 1;
+    string message = 2;
+    string error = 3;
+}
